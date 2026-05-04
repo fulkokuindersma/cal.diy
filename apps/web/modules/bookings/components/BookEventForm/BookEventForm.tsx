@@ -174,7 +174,8 @@ export const BookEventForm = ({
           </div>
         ) : null}
 
-        {!isPlatform && (
+        {/* Hidden on self-hosted (no Publikum legal docs) — see CLAUDE.md */}
+        {false && !isPlatform && (
           <div className="my-3 w-full text-xs text-subtle">
             <ServerTrans
               t={t}
@@ -200,7 +201,7 @@ export const BookEventForm = ({
           </div>
         )}
 
-        {isPlatformBookerEmbed && (
+        {false && isPlatformBookerEmbed && (
           <div className="my-3 w-full text-xs text-subtle">
             {t("proceeding_agreement")}{" "}
             <Link
